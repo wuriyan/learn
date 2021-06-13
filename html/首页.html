@@ -5,10 +5,12 @@
    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link rel="stylesheet" href="../css/bootstrap.css"/>  
     <link rel="stylesheet" href="../css/mycss.css"/>  
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery-1.11.1.min.js"></script>
+    
+  
+    
 </head>
 
 <body>
@@ -79,10 +81,10 @@
                 </div>
                <div class="wz1">今天突然心血来潮，想写写想法，结果找了半天找不到，百度了一下，还好比较靠前的回答都很靠谱，马上就找到了，还是写一下</div>
             
-                  <button type="button" class="btn2 btn-default btn-xs">
-                     <span class="glyphicon glyphicon-chevron-up">赞同</span>
+                  <button type="button" id="bn" class="btn2 btn-default btn-xs" >
+                     <span  id="tub" class="glyphicon glyphicon-chevron-up">点赞</span>
                     </button> 
-                    <button type="button" class="btn1 btn-default btn-xs">
+                    <button type="button" id="xiaobn" class="btn1 btn-default btn-xs">
                          <span class="glyphicon glyphicon-chevron-down"></span>    
                     </button>
                <div class="pl">
@@ -101,10 +103,10 @@
                 </div>
                <div class="wz1">今天突然心血来潮，想写写想法，结果找了半天找不到，百度了一下，还好比较靠前的回答都很靠谱，马上就找到了，还是写一下</div>
             
-                  <button type="button" class="btn2 btn-default btn-xs">
+                  <button type="button" id="bn1" class="btn2 btn-default btn-xs">
                      <span class="glyphicon glyphicon-chevron-up">赞同</span>
                     </button> 
-                    <button type="button" class="btn1 btn-default btn-xs">
+                    <button type="button"  class="btn1 btn-default btn-xs">
                          <span class="glyphicon glyphicon-chevron-down"></span>    
                     </button>
                <div class="pl">
@@ -124,7 +126,7 @@
                 </div>
                <div class="wz1">今天突然心血来潮，想写写想法，结果找了半天找不到，百度了一下，还好比较靠前的回答都很靠谱，马上就找到了，还是写一下</div>
             
-                  <button type="button" class="btn2 btn-default btn-xs">
+                  <button type="button" id="bn2" class="btn2 btn-default btn-xs">
                      <span class="glyphicon glyphicon-chevron-up">赞同</span>
                     </button> 
                     <button type="button" class="btn1 btn-default btn-xs">
@@ -172,7 +174,47 @@
         <li>证照中心Investor Relations</li>
     </ul>
 </div>
-  
+ <script>    
+     var tb=document.getElementById("tub"); 
+     var zan=document.getElementById("bn");
+     var flag=0;
+     zan.onclick=function (){
+         
+         if(flag==0){
+           zan.style.background="red";
+           zan.style.width = "100px";  
+           tb.innerHTML="已赞同 1"     
+         }
+         if(flag==1){
+            zan.style.background="white";
+            zan.style.width = "60px";
+            tb.innerHTML="赞同 " 
+         }
+         if(flag==2){
+            zan.style.background="red";
+            zan.style.width = "100px";
+            tb.innerHTML="已赞同 1"   
+            flag=0;
+         }
+       flag++;
+     }
+     var jian=document.getElementById("xianbn");
+     
+     jian.onclick =function(){
+       if(flag==0){jian.style.background="red"}
+       if(flag==1){
+           jian.style.background="while"
+       }
+       if(flag==2){
+        if(flag==0){jian.style.background="red"
+        flag=0;
+       }
+       flag++    
+     }
+     $("#jian").click(function(){
+    $("#zan").trigger('click');
+  })
+ </script> 
   
 </body>
 </html>
