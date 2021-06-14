@@ -13,7 +13,7 @@
     
 </head>
 
-<body>
+<body>              
     <div class="one">
         <div class="one1">知乎</div>
        <ul>
@@ -89,13 +89,19 @@
                     </button>
                <div class="pl">
                      <ul>
-                        <li><a href="#"><span class="glyphicon glyphicon-pencil" > </span> 评论</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-send" > </span> 分享</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-heart" > </span> 喜欢</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-star" > </span> 收藏</a></li>
+                        <li><a href="#"><span id="gaib" class="glyphicon glyphicon-pencil" >评论 </span> </a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-send" >分享</span> </a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-heart" >喜欢</span> </a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-star" >收藏</span> </a></li>
                         <li><a href="#"><span> </span> ...</a></li>
                      </ul>
-                </div>    
+                </div>   
+                <div id="bianj">
+                    <div id="bj1"><b>还没有评论</b></div>
+                    <div id="bj2">
+                        <form><input="text" placeholder="写下你的评论..." ></form>
+                    </div>
+                </div> 
             </div>
             <div class="ny1">  
                 <div class="ny1-2">
@@ -104,17 +110,17 @@
                <div class="wz1">今天突然心血来潮，想写写想法，结果找了半天找不到，百度了一下，还好比较靠前的回答都很靠谱，马上就找到了，还是写一下</div>
             
                   <button type="button" id="bn1" class="btn2 btn-default btn-xs">
-                     <span class="glyphicon glyphicon-chevron-up">赞同</span>
+                     <span id="tub1" class="glyphicon glyphicon-chevron-up">赞同</span>
                     </button> 
-                    <button type="button"  class="btn1 btn-default btn-xs">
+                    <button type="button" id="xiaobn1" class="btn1 btn-default btn-xs">
                          <span class="glyphicon glyphicon-chevron-down"></span>    
                     </button>
                <div class="pl">
                      <ul>
-                        <li><a href="#"><span class="glyphicon glyphicon-pencil" > </span> 评论</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-send" > </span> 分享</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-heart" > </span> 喜欢</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-star" > </span> 收藏</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-pencil" > </span> </a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-send" >分享</span> </a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-heart" >喜欢</span> </a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-star" >收藏</span> </a></li>
                         <li><a href="#"><span> </span> ...</a></li>
                      </ul>
                 </div>    
@@ -127,17 +133,17 @@
                <div class="wz1">今天突然心血来潮，想写写想法，结果找了半天找不到，百度了一下，还好比较靠前的回答都很靠谱，马上就找到了，还是写一下</div>
             
                   <button type="button" id="bn2" class="btn2 btn-default btn-xs">
-                     <span class="glyphicon glyphicon-chevron-up">赞同</span>
+                     <span id="tub2" class="glyphicon glyphicon-chevron-up">赞同</span>
                     </button> 
-                    <button type="button" class="btn1 btn-default btn-xs">
+                    <button type="button" id="xiaobn2" class="btn1 btn-default btn-xs">
                          <span class="glyphicon glyphicon-chevron-down"></span>    
                     </button>
                <div class="pl">
                      <ul>
-                        <li><a href="#"><span class="glyphicon glyphicon-pencil" > </span> 评论</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-send" > </span> 分享</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-heart" > </span> 喜欢</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-star" > </span> 收藏</a></li>
+                        <li><a href="#"><span  class="glyphicon glyphicon-pencil" >评论 </span> </a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-send" > 分享</span> </a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-heart" >  喜欢</span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-star" > 收藏</span> </a></li>
                         <li><a href="#"><span> </span> ...</a></li>
                      </ul>
                 </div>    
@@ -198,22 +204,107 @@
          }
        flag++;
      }
-     var jian=document.getElementById("xianbn");
-     
+     var tb1=document.getElementById("tub1"); 
+     var zan1=document.getElementById("bn1");   
+     zan1.onclick=function (){       
+         if(flag==0){
+           zan1.style.background="red";
+           zan1.style.width = "100px";  
+           tb1.innerHTML="已赞同 1"     
+         }
+         if(flag==1){
+            zan1.style.background="white";
+            zan1.style.width = "60px";
+            tb1.innerHTML="赞同 " 
+         }
+         if(flag==2){
+            zan1.style.background="red";
+            zan1.style.width = "100px";
+            tb1.innerHTML="已赞同 1"   
+            flag=0;
+         }
+       flag++;
+     }
+     var tb2=document.getElementById("tub2"); 
+     var zan2=document.getElementById("bn2");   
+     zan2.onclick=function (){       
+         if(flag==0){
+           zan2.style.background="red";
+           zan2.style.width = "100px";  
+           tb2.innerHTML="已赞同 1"     
+         }
+         if(flag==1){
+            zan2.style.background="white";
+            zan2.style.width = "60px";
+            tb2.innerHTML="赞同 " 
+         }
+         if(flag==2){
+            zan2.style.background="red";
+            zan2.style.width = "100px";
+            tb2.innerHTML="已赞同 1"   
+            flag=0;
+         }
+       flag++;
+     }
+     var jian=document.getElementById("xiaobn");    
      jian.onclick =function(){
-       if(flag==0){jian.style.background="red"}
+       if(flag==0){
+           jian.style.background="red";
+        }
        if(flag==1){
-           jian.style.background="while"
+           jian.style.background="white";
        }
        if(flag==2){
-        if(flag==0){jian.style.background="red"
+       jian.style.background="red";
         flag=0;
        }
        flag++    
      }
-     $("#jian").click(function(){
-    $("#zan").trigger('click');
-  })
+     var jian1=document.getElementById("xiaobn1");    
+     jian1.onclick =function(){
+       if(flag==0){
+           jian1.style.background="red";
+        }
+       if(flag==1){
+           jian1.style.background="white";
+       }
+       if(flag==2){
+       jian1.style.background="red";
+        flag=0;
+       }
+       flag++    
+     }
+     var jian2=document.getElementById("xiaobn2");    
+     jian2.onclick =function(){
+       if(flag==0){
+           jian2.style.background="red";
+        }
+       if(flag==1){
+           jian2.style.background="white";
+       }
+       if(flag==2){
+       jian2.style.background="red";
+        flag=0;
+       }
+       flag++    
+     }
+var bj=document.getElementById("bianj");
+var gait=document.getElementById("gaib");
+gait.onclick=function(){
+    if(flag==0){
+        gait.innerHTML="收起评论";       
+    }
+    if(flag==1){
+        gait.innerHTML="评论"; 
+    }
+    if(flag==2){
+        gait.innerHTML="收起评论"; 
+        flag=0;
+    }
+    flag++;
+}
+
+     
  </script> 
   
 </body>

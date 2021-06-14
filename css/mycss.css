@@ -332,10 +332,6 @@ background-color: rgb(197, 193, 193);}
     height: 20px;
     position: relative; 
      display: inline-block;
-  
-    
-
-
 }
 
 .pl ul li {
@@ -343,7 +339,7 @@ background-color: rgb(197, 193, 193);}
     font-size: 8px;
     list-style-type: none;
     display: inline-block;
-    padding-left: 30px;
+    padding-left: 20px;
     color: lightgray;
 
     
@@ -357,7 +353,27 @@ background-color: rgb(197, 193, 193);}
   font-style: normal;
   font-weight: normal;
   line-height: 1;
+  
 }
+.bianj{
+    width:398px;
+    height: 80px;
+    border: 1px solid ;
+}
+.bj1{
+    width: 398px;
+    height: 39px;
+    border-bottom: solid 1px red;
+    line-height: 39px;
+    margin-right: 20px;
+}
+.bj2{
+width: 398px;
+height: 40px;
+    }
+
+
+
 .three{
     height: 550px;
     width: 350px;
