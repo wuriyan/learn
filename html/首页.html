@@ -90,18 +90,45 @@
                <div class="pl">
                      <ul>
                         <li><a href="#"><span id="gaib" class="glyphicon glyphicon-pencil" >评论 </span> </a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-send" >分享</span> </a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-heart" >喜欢</span> </a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-star" >收藏</span> </a></li>
+                        <li><a href="#"><span  id="fenxian" class="glyphicon glyphicon-send" >分享</span> </a></li>
+                        <li><a href="#"><span  id="xihuan" class="glyphicon glyphicon-heart" >喜欢</span> </a></li>
+                        <li><a href="#"><span  id="shoucan" class="glyphicon glyphicon-star" >收藏</span> </a></li>
                         <li><a href="#"><span> </span> ...</a></li>
                      </ul>
-                </div>   
-                <div id="bianj">
-                    <div id="bj1"><b>还没有评论</b></div>
-                    <div id="bj2">
-                        <form><input="text" placeholder="写下你的评论..." ></form>
+                     <div class="fenx" id="fenx">
+                        <ul>
+                            <li><a href="#"><img src="../image/1623756422(1).jpg"> 复制链接</a></li>
+                            <li><a href="#"><img src="../image/1623756422(1).jpg"> 复制链接</a></li>
+                            <li><a href="#"><img src="../image/1623756422(1).jpg"> 复制链接</a></li>
+                        </ul>
+    
                     </div>
                 </div> 
+
+               <div id="bianj" class="bianj">
+                    <div id="bj1" class="bj1"><b>还没有评论</b></div>
+                    <div class="form-group">   
+                        <input type="text" class="bj2" id="name" 
+                               placeholder="写下你的评论...">
+                               <button type="submit" class="btnpl btn-default">提交</button>
+                    </div>
+                </div>
+               
+
+                <div class="shouc" id="tianjsc">
+                    <div class="shouc1"><b>添加收藏</b></div>
+                    <div class="shouc2">你可以创建多个收藏夹，将答案分类收藏</div>
+                    <div class="form-group">                        
+                               <button type="submit" class="btncj btn-default">创建文件夹</button>
+                    </div>
+                    <div class="form-group">                         
+                               <button type="button"id="qixiao" class="btnqx btn-default">取消</button>
+                    </div>
+                </div>
+                <div class="form-group">                         
+                    <button type="button"  id="dax" class="btndx btn-default">x</button>
+                </div>
+
             </div>
             <div class="ny1">  
                 <div class="ny1-2">
@@ -292,13 +319,68 @@ var bj=document.getElementById("bianj");
 var gait=document.getElementById("gaib");
 gait.onclick=function(){
     if(flag==0){
-        gait.innerHTML="收起评论";       
+        gait.innerHTML="收起评论"; 
+        document.getElementById("bianj").style.display="block"      
     }
     if(flag==1){
         gait.innerHTML="评论"; 
+        document.getElementById("bianj").style.display="none"   
     }
     if(flag==2){
         gait.innerHTML="收起评论"; 
+        document.getElementById("bianj").style.display="block"   
+        flag=0;
+    }
+    flag++;
+}
+var fx=document.getElementById("fenxian");
+var fen=document.getElementById("fenx");
+fx.onclick=function(){
+    if(flag==0){
+        
+        document.getElementById("fenx").style.display="block";     
+    }
+    if(flag==1){
+        
+        document.getElementById("fenx").style.display="none";      
+    }
+    if(flag==2){
+        
+        document.getElementById("fenx").style.display="block" ;  
+        flag=0;   
+    }
+    flag ++;
+}
+var tianj=document.getElementById(tianjsc);
+var dx=document.getElementById("dax");
+var sc=document.getElementById("shoucan");
+var qx=document.getElementById("qixiao")
+sc.onclick=function(){
+    document.getElementById("tianjsc").style.display="block";
+    document.getElementById("dax").style.display="block";
+
+}
+dx.onclick=function(){
+    document.getElementById("tianjsc").style.display="none";
+    document.getElementById("dax").style.display="none";
+}
+qx.onclick=function(){
+    document.getElementById("tianjsc").style.display="none";
+    document.getElementById("dax").style.display="none";
+}
+var xh=document.getElementById("xihuan");
+xh.onclick=function(){
+    if(flag==0){
+        xh.innerHTML="取消喜欢"; 
+             
+    }
+    if(flag==1){
+        xh.innerHTML="喜欢"; 
+          
+    }
+    if(flag==2){
+    xh.innerHTML="取消喜欢"; 
+          
         flag=0;
     }
     flag++;
